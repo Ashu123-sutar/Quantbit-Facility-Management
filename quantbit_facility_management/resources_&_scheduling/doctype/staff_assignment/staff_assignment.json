@@ -5,43 +5,43 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "certification_name",
-  "issuing_body",
-  "certificate_no",
-  "issue_date",
-  "expiry_date"
+  "technician",
+  "role",
+  "start_time",
+  "end_time",
+  "notes"
  ],
  "fields": [
   {
-   "fieldname": "certification_name",
-   "fieldtype": "Data",
-   "label": "Certification Name",
+   "fieldname": "technician",
+   "fieldtype": "Link",
+   "label": "Technician",
+   "options": "Technician",
    "reqd": 1,
    "in_list_view": 1
   },
   {
-   "fieldname": "issuing_body",
+   "fieldname": "role",
    "fieldtype": "Data",
-   "label": "Issuing Body",
+   "label": "Role",
    "in_list_view": 1
   },
   {
-   "fieldname": "certificate_no",
-   "fieldtype": "Data",
-   "label": "Certificate No.",
+   "fieldname": "start_time",
+   "fieldtype": "Time",
+   "label": "Start Time",
    "in_list_view": 1
   },
   {
-   "fieldname": "issue_date",
-   "fieldtype": "Date",
-   "label": "Issue Date",
+   "fieldname": "end_time",
+   "fieldtype": "Time",
+   "label": "End Time",
    "in_list_view": 1
   },
   {
-   "fieldname": "expiry_date",
-   "fieldtype": "Date",
-   "label": "Expiry Date",
-   "in_list_view": 1
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
   }
  ],
  "index_web_pages_for_search": 0,
@@ -51,7 +51,7 @@
  "modified": "2026-04-07 00:00:00.000000",
  "modified_by": "Administrator",
  "module": "Resources & Scheduling",
- "name": "Technician Certification",
+ "name": "Staff Assignment",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",

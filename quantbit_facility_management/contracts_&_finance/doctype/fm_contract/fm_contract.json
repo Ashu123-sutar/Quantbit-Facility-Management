@@ -1,0 +1,252 @@
+{
+ "actions": [],
+ "creation": "2026-04-07 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tab_cgmmv",
+  "sec_gwzlz",
+  "naming_series",
+  "contract_name",
+  "col_ynshv",
+  "contract_type",
+  "status",
+  "sec_ndwlc",
+  "customer",
+  "property",
+  "col_bfnvp",
+  "contractor",
+  "tab_qwket",
+  "sec_jpvxf",
+  "start_date",
+  "end_date",
+  "col_cnalj",
+  "contract_value",
+  "billing_frequency",
+  "sec_nplef",
+  "scope_of_work",
+  "tab_gggab",
+  "sec_rmotz",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "tab_cgmmv",
+   "fieldtype": "Tab Break",
+   "label": "Contract Details"
+  },
+  {
+   "fieldname": "sec_gwzlz",
+   "fieldtype": "Section Break",
+   "label": "Identity"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "FMC-.####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contract_name",
+   "fieldtype": "Data",
+   "label": "Contract Name",
+   "reqd": 1,
+   "bold": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "col_ynshv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contract_type",
+   "fieldtype": "Select",
+   "label": "Contract Type",
+   "options": "AMC\nPMC\nAd-hoc",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nActive\nExpired\nTerminated",
+   "default": "Draft",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "sec_ndwlc",
+   "fieldtype": "Section Break",
+   "label": "Parties"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "property",
+   "fieldtype": "Link",
+   "label": "Property",
+   "options": "Property",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "col_bfnvp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contractor",
+   "fieldtype": "Link",
+   "label": "Contractor",
+   "options": "Contractor"
+  },
+  {
+   "fieldname": "tab_qwket",
+   "fieldtype": "Tab Break",
+   "label": "Commercial"
+  },
+  {
+   "fieldname": "sec_jpvxf",
+   "fieldtype": "Section Break",
+   "label": "Contract Period"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "col_cnalj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contract_value",
+   "fieldtype": "Currency",
+   "label": "Contract Value"
+  },
+  {
+   "fieldname": "billing_frequency",
+   "fieldtype": "Select",
+   "label": "Billing Frequency",
+   "options": "Monthly\nQuarterly\nSemi-Annual\nAnnual\nOne-Time",
+   "default": "Monthly"
+  },
+  {
+   "fieldname": "sec_nplef",
+   "fieldtype": "Section Break",
+   "label": "Scope of Work"
+  },
+  {
+   "fieldname": "scope_of_work",
+   "fieldtype": "Table",
+   "label": "Scope of Work",
+   "options": "Scope of Work Line"
+  },
+  {
+   "fieldname": "tab_gggab",
+   "fieldtype": "Tab Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "sec_rmotz",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 1,
+ "istable": 0,
+ "links": [],
+ "modified": "2026-04-07 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Contracts & Finance",
+ "name": "FM Contract",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "FM Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "email": 1,
+   "print": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1
+  },
+  {
+   "role": "Supervisor",
+   "read": 1,
+   "email": 1,
+   "print": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1
+  },
+  {
+   "role": "Accountant",
+   "read": 1,
+   "write": 1,
+   "email": 1,
+   "print": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1
+  },
+  {
+   "role": "Lease Manager",
+   "read": 1,
+   "email": 1,
+   "print": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "email": 1,
+   "print": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "naming_series:",
+ "naming_rule": "By naming_series field",
+ "naming_series": "FMC-.####",
+ "title_field": "contract_name"
+}
