@@ -1,0 +1,679 @@
+{
+    "actions": [],
+    "creation": "2026-04-07 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "tab_vdiak",
+        "sec_drffg",
+        "naming_series",
+        "company",
+        "title",
+        "col_osejs",
+        "service_request",
+        "fm_contract",
+        "project",
+        "sec_ntxgv",
+        "priority",
+        "status",
+        "col_arjjd",
+        "service_category",
+        "sec_poqil",
+        "scheduled_date",
+        "estimated_hours",
+        "col_waeyc",
+        "actual_start",
+        "actual_end",
+        "actual_hours",
+        "tab_jxetp",
+        "sec_ggfff",
+        "property",
+        "floor",
+        "col_rwguu",
+        "unit",
+        "sec_mwmvd",
+        "wo_asset_type",
+        "cafm_asset",
+        "col_lepsn",
+        "unit_asset",
+        "tab_legxs",
+        "sec_lpovc",
+        "assigned_technician",
+        "contractor",
+        "col_zoabv",
+        "permit_to_work",
+        "risk_assessment",
+        "tab_nbuhk",
+        "sec_niexr",
+        "checklist_template",
+        "checklist_items",
+        "sec_nkrnx",
+        "source_warehouse",
+        "materials_used",
+        "tab_fxsoa",
+        "sec_tzome",
+        "billing_amount",
+        "is_billable",
+        "col_bflxk",
+        "service_invoice",
+        "sec_mhgmz",
+        "notes",
+        "connections_tab",
+        "amended_from"
+    ],
+    "fields": [
+        {
+            "fieldname": "tab_vdiak",
+            "fieldtype": "Tab Break",
+            "label": "Work Order Details"
+        },
+        {
+            "fieldname": "sec_drffg",
+            "fieldtype": "Section Break",
+            "label": "Identity"
+        },
+        {
+            "fieldname": "naming_series",
+            "fieldtype": "Select",
+            "label": "Series",
+            "options": "WO-.####",
+            "reqd": 1
+        },
+        {
+            "fieldname": "company",
+            "fieldtype": "Link",
+            "label": "Company",
+            "options": "Company",
+            "remember_last_selected_value": 1,
+            "reqd": 1
+        },
+        {
+            "fieldname": "title",
+            "fieldtype": "Data",
+            "label": "Title",
+            "reqd": 1,
+            "bold": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "col_osejs",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "service_request",
+            "fieldtype": "Link",
+            "label": "Service Request",
+            "options": "Service Request",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "fm_contract",
+            "fieldtype": "Link",
+            "label": "FM Contract",
+            "options": "FM Contract"
+        },
+        {
+            "fieldname": "project",
+            "fieldtype": "Link",
+            "label": "Project",
+            "options": "Project"
+        },
+        {
+            "fieldname": "sec_ntxgv",
+            "fieldtype": "Section Break",
+            "label": "Priority & Status"
+        },
+        {
+            "fieldname": "priority",
+            "fieldtype": "Select",
+            "label": "Priority",
+            "options": "Low\nMedium\nHigh\nCritical",
+            "default": "Medium",
+            "in_list_view": 1,
+            "reqd": 1
+        },
+        {
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Draft\nScheduled\nIn Progress\nOn Hold\nQC Pass\nQC Fail\nCompleted\nCancelled",
+            "default": "Draft",
+            "in_list_view": 1,
+            "bold": 1
+        },
+        {
+            "fieldname": "col_arjjd",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "service_category",
+            "fieldtype": "Link",
+            "label": "Service Category",
+            "options": "Service Category"
+        },
+        {
+            "fieldname": "sec_poqil",
+            "fieldtype": "Section Break",
+            "label": "Schedule"
+        },
+        {
+            "fieldname": "scheduled_date",
+            "fieldtype": "Date",
+            "label": "Scheduled Date",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "estimated_hours",
+            "fieldtype": "Float",
+            "label": "Estimated Hours"
+        },
+        {
+            "fieldname": "col_waeyc",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "actual_start",
+            "fieldtype": "Datetime",
+            "label": "Actual Start"
+        },
+        {
+            "fieldname": "actual_end",
+            "fieldtype": "Datetime",
+            "label": "Actual End"
+        },
+        {
+            "fieldname": "actual_hours",
+            "fieldtype": "Float",
+            "label": "Actual Hours",
+            "read_only": 1
+        },
+        {
+            "fieldname": "tab_jxetp",
+            "fieldtype": "Tab Break",
+            "label": "Location & Assets"
+        },
+        {
+            "fieldname": "sec_ggfff",
+            "fieldtype": "Section Break",
+            "label": "Property Location"
+        },
+        {
+            "fieldname": "property",
+            "fieldtype": "Link",
+            "label": "Property",
+            "options": "Property",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "floor",
+            "fieldtype": "Link",
+            "label": "Floor",
+            "options": "Property Floor"
+        },
+        {
+            "fieldname": "col_rwguu",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "unit",
+            "fieldtype": "Link",
+            "label": "Property Unit",
+            "options": "Property Unit"
+        },
+        {
+            "fieldname": "sec_mwmvd",
+            "fieldtype": "Section Break",
+            "label": "Asset"
+        },
+        {
+            "fieldname": "wo_asset_type",
+            "fieldtype": "Select",
+            "label": "Asset Type",
+            "options": "\nBuilding Asset\nUnit Asset"
+        },
+        {
+            "fieldname": "cafm_asset",
+            "fieldtype": "Link",
+            "label": "CAFM Asset",
+            "options": "CAFM Asset"
+        },
+        {
+            "fieldname": "col_lepsn",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "unit_asset",
+            "fieldtype": "Link",
+            "label": "Unit Asset",
+            "options": "Unit Asset"
+        },
+        {
+            "fieldname": "tab_legxs",
+            "fieldtype": "Tab Break",
+            "label": "Assignment"
+        },
+        {
+            "fieldname": "sec_lpovc",
+            "fieldtype": "Section Break",
+            "label": "Assignment"
+        },
+        {
+            "fieldname": "assigned_technician",
+            "fieldtype": "Link",
+            "label": "Technician",
+            "options": "Technician",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "contractor",
+            "fieldtype": "Link",
+            "label": "Contractor",
+            "options": "Contractor"
+        },
+        {
+            "fieldname": "col_zoabv",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "permit_to_work",
+            "fieldtype": "Link",
+            "label": "Permit to Work",
+            "options": "Permit to Work"
+        },
+        {
+            "fieldname": "risk_assessment",
+            "fieldtype": "Link",
+            "label": "Risk Assessment",
+            "options": "Risk Assessment"
+        },
+        {
+            "fieldname": "tab_nbuhk",
+            "fieldtype": "Tab Break",
+            "label": "Execution"
+        },
+        {
+            "fieldname": "sec_niexr",
+            "fieldtype": "Section Break",
+            "label": "Checklist"
+        },
+        {
+            "fieldname": "checklist_template",
+            "fieldtype": "Link",
+            "label": "Checklist Template",
+            "options": "Checklist Template"
+        },
+        {
+            "fieldname": "checklist_items",
+            "fieldtype": "Table",
+            "label": "WO Checklist",
+            "options": "WO Checklist Item"
+        },
+        {
+            "fieldname": "sec_nkrnx",
+            "fieldtype": "Section Break",
+            "label": "Materials Used"
+        },
+        {
+            "description": "Location where raw materials are available. Defaults for Stock Entry.",
+            "fieldname": "source_warehouse",
+            "fieldtype": "Link",
+            "label": "Source Warehouse",
+            "options": "Warehouse"
+        },
+        {
+            "fieldname": "materials_used",
+            "fieldtype": "Table",
+            "label": "Materials Used",
+            "options": "WO Materials Used",
+            "description": "Triggers ERPNext Stock Entry on WO completion"
+        },
+        {
+            "fieldname": "tab_fxsoa",
+            "fieldtype": "Tab Break",
+            "label": "Billing"
+        },
+        {
+            "fieldname": "sec_tzome",
+            "fieldtype": "Section Break",
+            "label": "Financial"
+        },
+        {
+            "fieldname": "billing_amount",
+            "fieldtype": "Currency",
+            "label": "Billing Amount"
+        },
+        {
+            "fieldname": "is_billable",
+            "fieldtype": "Check",
+            "label": "Billable",
+            "default": "0"
+        },
+        {
+            "fieldname": "col_bflxk",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "service_invoice",
+            "fieldtype": "Link",
+            "label": "Service Invoice",
+            "options": "Service Invoice",
+            "read_only": 1
+        },
+        {
+            "fieldname": "sec_mhgmz",
+            "fieldtype": "Section Break",
+            "label": "Notes"
+        },
+        {
+            "fieldname": "notes",
+            "fieldtype": "Small Text",
+            "label": "Notes"
+        },
+        {
+            "fieldname": "connections_tab",
+            "fieldtype": "Tab Break",
+            "label": "Connections",
+            "show_dashboard": 1
+        },
+        {
+            "fieldname": "amended_from",
+            "fieldtype": "Link",
+            "ignore_user_permissions": 1,
+            "label": "Amended From",
+            "no_copy": 1,
+            "options": "Work Order",
+            "read_only": 1
+        },
+        {
+            "fieldname": "sec_details_mockup",
+            "fieldtype": "Section Break",
+            "label": "WO Details (From Mockups)"
+        },
+        {
+            "fieldname": "reported_date",
+            "fieldtype": "Datetime",
+            "label": "Reported Date"
+        },
+        {
+            "fieldname": "appointment_date",
+            "fieldtype": "Date",
+            "label": "Appointment Date"
+        },
+        {
+            "fieldname": "preferred_date",
+            "fieldtype": "Datetime",
+            "label": "Preferred Date and Time"
+        },
+        {
+            "fieldname": "default_priority",
+            "fieldtype": "Data",
+            "label": "Default Priority"
+        },
+        {
+            "fieldname": "approval_criticality",
+            "fieldtype": "Data",
+            "label": "Approval Criticality"
+        },
+        {
+            "fieldname": "contract_group",
+            "fieldtype": "Data",
+            "label": "Contract Group"
+        },
+        {
+            "fieldname": "location_category",
+            "fieldtype": "Data",
+            "label": "Location Category"
+        },
+        {
+            "fieldname": "priority_change_reason",
+            "fieldtype": "Data",
+            "label": "Priority Change Reason"
+        },
+        {
+            "fieldname": "priority_change_remarks",
+            "fieldtype": "Data",
+            "label": "Priority Change Remarks"
+        },
+        {
+            "fieldname": "contract",
+            "fieldtype": "Link",
+            "label": "Contract",
+            "options": "Contract"
+        },
+        {
+            "fieldname": "customer",
+            "fieldtype": "Link",
+            "label": "Customer",
+            "options": "Customer"
+        },
+        {
+            "fieldname": "reported_by",
+            "fieldtype": "Data",
+            "label": "Reported By"
+        },
+        {
+            "fieldname": "asset_code",
+            "fieldtype": "Data",
+            "label": "Asset Code"
+        },
+        {
+            "fieldname": "asset_name",
+            "fieldtype": "Data",
+            "label": "Asset Name"
+        },
+        {
+            "fieldname": "asset_sub_category",
+            "fieldtype": "Data",
+            "label": "Asset Sub Category"
+        },
+        {
+            "fieldname": "asset_category",
+            "fieldtype": "Data",
+            "label": "Asset Category"
+        },
+        {
+            "fieldname": "asset_master_category",
+            "fieldtype": "Data",
+            "label": "Asset Master Category"
+        },
+        {
+            "fieldname": "final_approver",
+            "fieldtype": "Data",
+            "label": "Final Approver"
+        },
+        {
+            "fieldname": "area",
+            "fieldtype": "Data",
+            "label": "Area"
+        },
+        {
+            "fieldname": "material_request_status",
+            "fieldtype": "Data",
+            "label": "Material Request Status"
+        },
+        {
+            "fieldname": "customer_rating",
+            "fieldtype": "Data",
+            "label": "Customer Rating"
+        },
+        {
+            "fieldname": "service_group",
+            "fieldtype": "Data",
+            "label": "Service Group"
+        },
+        {
+            "fieldname": "fault_category",
+            "fieldtype": "Data",
+            "label": "Fault Category"
+        },
+        {
+            "fieldname": "fault_code",
+            "fieldtype": "Data",
+            "label": "Fault Code"
+        },
+        {
+            "fieldname": "service_provider",
+            "fieldtype": "Data",
+            "label": "Service Provider"
+        },
+        {
+            "fieldname": "assigned_date",
+            "fieldtype": "Datetime",
+            "label": "Assigned Date"
+        },
+        {
+            "fieldname": "technician",
+            "fieldtype": "Data",
+            "label": "Technician"
+        },
+        {
+            "fieldname": "initiator_type",
+            "fieldtype": "Data",
+            "label": "Initiator Type"
+        },
+        {
+            "fieldname": "based_wo",
+            "fieldtype": "Data",
+            "label": "Based WO"
+        },
+        {
+            "fieldname": "requested_through",
+            "fieldtype": "Data",
+            "label": "Requested Through"
+        },
+        {
+            "fieldname": "wo_type",
+            "fieldtype": "Data",
+            "label": "WO Type"
+        },
+        {
+            "fieldname": "wo_sub_type",
+            "fieldtype": "Data",
+            "label": "WO Sub Type"
+        },
+        {
+            "fieldname": "extension_date",
+            "fieldtype": "Date",
+            "label": "Extension date"
+        },
+        {
+            "fieldname": "logged_by",
+            "fieldtype": "Data",
+            "label": "Logged By"
+        },
+        {
+            "fieldname": "assigned_by",
+            "fieldtype": "Data",
+            "label": "Assigned By"
+        },
+        {
+            "fieldname": "sr_number",
+            "fieldtype": "Data",
+            "label": "SR Number"
+        },
+        {
+            "fieldname": "wo_source",
+            "fieldtype": "Data",
+            "label": "WO Source"
+        },
+        {
+            "fieldname": "location_contact",
+            "fieldtype": "Data",
+            "label": "Location Contact"
+        },
+        {
+            "fieldname": "parent_wo_number",
+            "fieldtype": "Data",
+            "label": "Parent WO #"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "is_submittable": 1,
+    "istable": 0,
+    "links": [],
+    "modified": "2026-04-07 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Operations",
+    "name": "Work Orders",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "role": "FM Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "submit": 1,
+            "cancel": 1,
+            "amend": 1,
+            "email": 1,
+            "print": 1,
+            "report": 1,
+            "export": 1,
+            "share": 1
+        },
+        {
+            "role": "Supervisor",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "submit": 1,
+            "cancel": 1,
+            "email": 1,
+            "print": 1,
+            "report": 1,
+            "export": 1,
+            "share": 1
+        },
+        {
+            "role": "Technician",
+            "read": 1,
+            "email": 1,
+            "print": 1,
+            "report": 1,
+            "export": 1,
+            "share": 1
+        },
+        {
+            "role": "Accountant",
+            "read": 1,
+            "email": 1,
+            "print": 1,
+            "report": 1,
+            "export": 1,
+            "share": 1
+        },
+        {
+            "role": "Property Manager",
+            "read": 1,
+            "email": 1,
+            "print": 1,
+            "report": 1,
+            "export": 1,
+            "share": 1
+        },
+        {
+            "role": "System Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "submit": 1,
+            "cancel": 1,
+            "email": 1,
+            "print": 1,
+            "report": 1,
+            "export": 1,
+            "share": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1,
+    "autoname": "naming_series:",
+    "naming_rule": "By naming_series field",
+    "naming_series": "WO-.####",
+    "title_field": "title"
+}

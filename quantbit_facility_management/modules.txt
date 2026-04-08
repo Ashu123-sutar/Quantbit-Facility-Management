@@ -4,3 +4,4 @@ CAFM Configuration
 Resources & Scheduling
 Contracts & Finance
 Compliance & HSE
+Operations
