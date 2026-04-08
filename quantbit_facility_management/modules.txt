@@ -2,3 +2,4 @@ Quantbit Facility Management
 Asset
 CAFM Configuration
 Resources & Scheduling
+Operations
