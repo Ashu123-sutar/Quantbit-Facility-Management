@@ -1,0 +1,393 @@
+{
+ "actions": [],
+ "creation": "2026-04-07 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tab_dyqcb",
+  "sec_yvduf",
+  "property_name",
+  "property_code",
+  "col_gownb",
+  "company",
+  "owner",
+  "sec_kggmt",
+  "property_category",
+  "property_type",
+  "col_xmvdf",
+  "cost_centre",
+  "currency",
+  "sec_fnkua",
+  "address_line_1",
+  "city",
+  "col_lecde",
+  "emirate_region",
+  "country",
+  "maps_link",
+  "tab_umivk",
+  "sec_ahdwl",
+  "ejari_building_id",
+  "dewa_premise_number",
+  "col_rzwwc",
+  "sewa_account",
+  "omas_account",
+  "sec_rwqgo",
+  "vat_registration",
+  "municipality_code",
+  "tab_bxqas",
+  "sec_aaiiu",
+  "total_floors",
+  "total_area_sqft",
+  "col_cjheh",
+  "year_built",
+  "commissioning_date",
+  "sec_ffyhc",
+  "total_units",
+  "occupied_units",
+  "col_kcxyi",
+  "occupancy_pct",
+  "tab_lejcs",
+  "sec_pgrxi",
+  "property_photos",
+  "sec_jivbt",
+  "property_documents"
+ ],
+ "fields": [
+  {
+   "fieldname": "tab_dyqcb",
+   "fieldtype": "Tab Break",
+   "label": "General"
+  },
+  {
+   "fieldname": "sec_yvduf",
+   "fieldtype": "Section Break",
+   "label": "Identity"
+  },
+  {
+   "fieldname": "property_name",
+   "fieldtype": "Data",
+   "label": "Property Name",
+   "reqd": 1,
+   "bold": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "property_code",
+   "fieldtype": "Data",
+   "label": "Property Code",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1,
+   "description": "Auto-named identifier, e.g. PROP-0001"
+  },
+  {
+   "fieldname": "col_gownb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "owner",
+   "fieldtype": "Link",
+   "label": "Owner / Investor",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sec_kggmt",
+   "fieldtype": "Section Break",
+   "label": "Classification"
+  },
+  {
+   "fieldname": "property_category",
+   "fieldtype": "Select",
+   "label": "Property Category",
+   "reqd": 1,
+   "options": "Residential\nCommercial\nIndustrial\nMixed-Use\nShort-Term Rental",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "property_type",
+   "fieldtype": "Select",
+   "label": "Property Type",
+   "options": "Apartment Block\nVilla Complex\nOffice Tower\nRetail Centre\nWarehouse\nServiced Apartments\nMixed-Use Tower"
+  },
+  {
+   "fieldname": "col_xmvdf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cost_centre",
+   "fieldtype": "Link",
+   "label": "Cost Centre",
+   "options": "Cost Center",
+   "reqd": 1
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "default": "AED"
+  },
+  {
+   "fieldname": "sec_fnkua",
+   "fieldtype": "Section Break",
+   "label": "Address & Location"
+  },
+  {
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "label": "Address Line 1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "col_lecde",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "emirate_region",
+   "fieldtype": "Select",
+   "label": "Emirate / Region",
+   "options": "\nDubai\nAbu Dhabi\nSharjah\nAjman\nRAK\nFujairah\nUAQ\nMuscat\nRiyadh\nJeddah\nNairobi\nOther"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country",
+   "default": "United Arab Emirates"
+  },
+  {
+   "fieldname": "maps_link",
+   "fieldtype": "Data",
+   "label": "Maps Link",
+   "description": "Direct URL to Google Maps / Apple Maps pin"
+  },
+  {
+   "fieldname": "tab_umivk",
+   "fieldtype": "Tab Break",
+   "label": "GCC Compliance"
+  },
+  {
+   "fieldname": "sec_ahdwl",
+   "fieldtype": "Section Break",
+   "label": "Utility & RERA IDs"
+  },
+  {
+   "fieldname": "ejari_building_id",
+   "fieldtype": "Data",
+   "label": "Ejari Building ID",
+   "description": "Dubai RERA"
+  },
+  {
+   "fieldname": "dewa_premise_number",
+   "fieldtype": "Data",
+   "label": "DEWA Premise Number"
+  },
+  {
+   "fieldname": "col_rzwwc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sewa_account",
+   "fieldtype": "Data",
+   "label": "SEWA Account"
+  },
+  {
+   "fieldname": "omas_account",
+   "fieldtype": "Data",
+   "label": "OMAS Account"
+  },
+  {
+   "fieldname": "sec_rwqgo",
+   "fieldtype": "Section Break",
+   "label": "Regulatory"
+  },
+  {
+   "fieldname": "vat_registration",
+   "fieldtype": "Data",
+   "label": "VAT / TRN Number"
+  },
+  {
+   "fieldname": "municipality_code",
+   "fieldtype": "Data",
+   "label": "Municipality Code"
+  },
+  {
+   "fieldname": "tab_bxqas",
+   "fieldtype": "Tab Break",
+   "label": "Property Details"
+  },
+  {
+   "fieldname": "sec_aaiiu",
+   "fieldtype": "Section Break",
+   "label": "Physical Attributes"
+  },
+  {
+   "fieldname": "total_floors",
+   "fieldtype": "Int",
+   "label": "Total Floors"
+  },
+  {
+   "fieldname": "total_area_sqft",
+   "fieldtype": "Float",
+   "label": "Total Area (sqft)"
+  },
+  {
+   "fieldname": "col_cjheh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "year_built",
+   "fieldtype": "Int",
+   "label": "Year Built"
+  },
+  {
+   "fieldname": "commissioning_date",
+   "fieldtype": "Date",
+   "label": "Commissioning Date"
+  },
+  {
+   "fieldname": "sec_ffyhc",
+   "fieldtype": "Section Break",
+   "label": "Occupancy (Computed)"
+  },
+  {
+   "fieldname": "total_units",
+   "fieldtype": "Int",
+   "label": "Total Units",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "occupied_units",
+   "fieldtype": "Int",
+   "label": "Occupied Units",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_kcxyi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "occupancy_pct",
+   "fieldtype": "Percent",
+   "label": "Occupancy %",
+   "read_only": 1,
+   "in_list_view": 1,
+   "description": "Refreshed nightly by occupancy_engine.py"
+  },
+  {
+   "fieldname": "tab_lejcs",
+   "fieldtype": "Tab Break",
+   "label": "Photos & Documents"
+  },
+  {
+   "fieldname": "sec_pgrxi",
+   "fieldtype": "Section Break",
+   "label": "Property Photos"
+  },
+  {
+   "fieldname": "property_photos",
+   "fieldtype": "Table",
+   "label": "Property Photos",
+   "options": "Property Photo"
+  },
+  {
+   "fieldname": "sec_jivbt",
+   "fieldtype": "Section Break",
+   "label": "Property Documents"
+  },
+  {
+   "fieldname": "property_documents",
+   "fieldtype": "Table",
+   "label": "Property Documents",
+   "options": "Property Document",
+   "description": "Expiry feeds statutory_expiry_alerts cron"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "istable": 0,
+ "links": [],
+ "modified": "2026-04-07 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Asset",
+ "name": "Property",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Property Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1
+  },
+  {
+   "role": "Lease Manager",
+   "read": 1,
+   "email": 1,
+   "print": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1
+  },
+  {
+   "role": "Accountant",
+   "read": 1,
+   "email": 1,
+   "print": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1
+  },
+  {
+   "role": "FM Manager",
+   "read": 1,
+   "email": 1,
+   "print": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "field:property_code",
+ "naming_rule": "By naming_series field",
+ "title_field": "property_name"
+}
