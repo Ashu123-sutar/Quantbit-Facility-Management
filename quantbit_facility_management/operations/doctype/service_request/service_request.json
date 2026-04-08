@@ -1,0 +1,377 @@
+{
+    "actions": [],
+    "creation": "2026-04-07 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "tab_disbq",
+        "sec_wdcrh",
+        "naming_series",
+        "subject",
+        "col_bqcnc",
+        "service_category",
+        "priority",
+        "sec_lepmi",
+        "status",
+        "assigned_to",
+        "col_bezdy",
+        "requested_by",
+        "request_date",
+        "sec_rtccn",
+        "description",
+        "attachment",
+        "tab_zguzc",
+        "sec_kvssk",
+        "property",
+        "floor",
+        "col_jaxpy",
+        "unit",
+        "sec_ubgyf",
+        "wo_asset_type",
+        "cafm_asset",
+        "col_ldxvt",
+        "unit_asset",
+        "tab_hgzyj",
+        "sec_zjazj",
+        "sla_policy",
+        "sec_irokh",
+        "response_deadline",
+        "resolution_deadline",
+        "col_pvnwp",
+        "response_time_actual",
+        "resolution_time_actual",
+        "sla_status",
+        "sec_qvqdj",
+        "notes"
+    ],
+    "fields": [
+        {
+            "fieldname": "tab_disbq",
+            "fieldtype": "Tab Break",
+            "label": "Request Details"
+        },
+        {
+            "fieldname": "sec_wdcrh",
+            "fieldtype": "Section Break",
+            "label": "Identity"
+        },
+        {
+            "fieldname": "naming_series",
+            "fieldtype": "Select",
+            "label": "Series",
+            "options": "SR-.####",
+            "reqd": 1
+        },
+        {
+            "fieldname": "subject",
+            "fieldtype": "Data",
+            "label": "Subject",
+            "reqd": 1,
+            "bold": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "col_bqcnc",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "service_category",
+            "fieldtype": "Link",
+            "label": "Service Category",
+            "options": "Service Category",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "priority",
+            "fieldtype": "Select",
+            "label": "Priority",
+            "options": "Low\nMedium\nHigh\nCritical",
+            "default": "Medium",
+            "in_list_view": 1,
+            "reqd": 1
+        },
+        {
+            "fieldname": "sec_lepmi",
+            "fieldtype": "Section Break",
+            "label": "Status & Assignment"
+        },
+        {
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Open\nAssigned\nIn Progress\nOn Hold\nEscalated\nResolved\nClosed\nCancelled",
+            "default": "Open",
+            "in_list_view": 1,
+            "bold": 1
+        },
+        {
+            "fieldname": "assigned_to",
+            "fieldtype": "Link",
+            "label": "Assigned To (Technician)",
+            "options": "Technician",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "col_bezdy",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "requested_by",
+            "fieldtype": "Link",
+            "label": "Requested By",
+            "options": "User"
+        },
+        {
+            "fieldname": "request_date",
+            "fieldtype": "Date",
+            "label": "Request Date",
+            "default": "Today"
+        },
+        {
+            "fieldname": "sec_rtccn",
+            "fieldtype": "Section Break",
+            "label": "Description"
+        },
+        {
+            "fieldname": "description",
+            "fieldtype": "Text",
+            "label": "Description",
+            "reqd": 1
+        },
+        {
+            "fieldname": "attachment",
+            "fieldtype": "Attach Image",
+            "label": "Attachment / Photo"
+        },
+        {
+            "fieldname": "tab_zguzc",
+            "fieldtype": "Tab Break",
+            "label": "Location & Routing"
+        },
+        {
+            "fieldname": "sec_kvssk",
+            "fieldtype": "Section Break",
+            "label": "Property Location"
+        },
+        {
+            "fieldname": "property",
+            "fieldtype": "Link",
+            "label": "Property",
+            "options": "Property",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "floor",
+            "fieldtype": "Link",
+            "label": "Floor",
+            "options": "Property Floor"
+        },
+        {
+            "fieldname": "col_jaxpy",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "unit",
+            "fieldtype": "Link",
+            "label": "Property Unit",
+            "options": "Property Unit",
+            "description": "Auto-populates Property and Floor"
+        },
+        {
+            "fieldname": "sec_ubgyf",
+            "fieldtype": "Section Break",
+            "label": "Asset Details"
+        },
+        {
+            "fieldname": "wo_asset_type",
+            "fieldtype": "Select",
+            "label": "Asset Type",
+            "options": "\nBuilding Asset\nUnit Asset",
+            "description": "Determines which asset link populates on the created WO"
+        },
+        {
+            "fieldname": "cafm_asset",
+            "fieldtype": "Link",
+            "label": "CAFM Asset (Building)",
+            "options": "CAFM Asset"
+        },
+        {
+            "fieldname": "col_ldxvt",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "unit_asset",
+            "fieldtype": "Link",
+            "label": "Unit Asset (In-Unit)",
+            "options": "Unit Asset",
+            "description": "Alternative to CAFM Asset for unit-level issues"
+        },
+        {
+            "fieldname": "tab_hgzyj",
+            "fieldtype": "Tab Break",
+            "label": "SLA & Deadlines"
+        },
+        {
+            "fieldname": "sec_zjazj",
+            "fieldtype": "Section Break",
+            "label": "SLA Policy"
+        },
+        {
+            "fieldname": "sla_policy",
+            "fieldtype": "Link",
+            "label": "SLA Policy",
+            "options": "SLA Policy",
+            "description": "Auto-assigned from Service Category"
+        },
+        {
+            "fieldname": "sec_irokh",
+            "fieldtype": "Section Break",
+            "label": "SLA Metrics"
+        },
+        {
+            "fieldname": "response_deadline",
+            "fieldtype": "Datetime",
+            "label": "Response Deadline",
+            "read_only": 1
+        },
+        {
+            "fieldname": "resolution_deadline",
+            "fieldtype": "Datetime",
+            "label": "Resolution Deadline",
+            "read_only": 1
+        },
+        {
+            "fieldname": "col_pvnwp",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "response_time_actual",
+            "fieldtype": "Float",
+            "label": "Actual Response (hrs)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "resolution_time_actual",
+            "fieldtype": "Float",
+            "label": "Actual Resolution (hrs)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "sla_status",
+            "fieldtype": "Select",
+            "label": "SLA Status",
+            "options": "Pending\nMet\nBreach",
+            "read_only": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "sec_qvqdj",
+            "fieldtype": "Section Break",
+            "label": "Notes"
+        },
+        {
+            "fieldname": "notes",
+            "fieldtype": "Small Text",
+            "label": "Internal Notes"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "is_submittable": 1,
+    "istable": 0,
+    "links": [],
+    "modified": "2026-04-07 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Operations",
+    "name": "Service Request",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "role": "FM Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "submit": 1,
+            "cancel": 1,
+            "amend": 1,
+            "email": 1,
+            "print": 1,
+            "report": 1,
+            "export": 1,
+            "share": 1
+        },
+        {
+            "role": "Supervisor",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "submit": 1,
+            "cancel": 1,
+            "email": 1,
+            "print": 1,
+            "report": 1,
+            "export": 1,
+            "share": 1
+        },
+        {
+            "role": "Technician",
+            "read": 1,
+            "email": 1,
+            "print": 1,
+            "report": 1,
+            "export": 1,
+            "share": 1
+        },
+        {
+            "role": "Tenant",
+            "read": 1,
+            "email": 1,
+            "print": 1,
+            "report": 1,
+            "export": 1,
+            "share": 1
+        },
+        {
+            "role": "Accountant",
+            "read": 1,
+            "email": 1,
+            "print": 1,
+            "report": 1,
+            "export": 1,
+            "share": 1
+        },
+        {
+            "role": "Property Manager",
+            "read": 1,
+            "email": 1,
+            "print": 1,
+            "report": 1,
+            "export": 1,
+            "share": 1
+        },
+        {
+            "role": "System Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "submit": 1,
+            "cancel": 1,
+            "email": 1,
+            "print": 1,
+            "report": 1,
+            "export": 1,
+            "share": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1,
+    "autoname": "naming_series:",
+    "naming_rule": "By naming_series field",
+    "naming_series": "SR-.####",
+    "title_field": "subject"
+}

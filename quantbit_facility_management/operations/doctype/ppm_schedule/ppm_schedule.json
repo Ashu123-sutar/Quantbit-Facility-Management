@@ -1,0 +1,240 @@
+{
+    "actions": [],
+    "creation": "2026-04-07 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "sec_gzivu",
+        "naming_series",
+        "schedule_name",
+        "service_category",
+        "col_emucr",
+        "status",
+        "fm_contract",
+        "sec_pnfvp",
+        "asset_type",
+        "cafm_asset",
+        "col_ghswo",
+        "unit_asset",
+        "property",
+        "sec_bzypd",
+        "frequency",
+        "next_run_date",
+        "col_asiof",
+        "last_run_date",
+        "assigned_to",
+        "sec_ygkbe",
+        "checklist_template",
+        "sec_vmvns",
+        "notes"
+    ],
+    "fields": [
+        {
+            "fieldname": "sec_gzivu",
+            "fieldtype": "Section Break",
+            "label": "Identity"
+        },
+        {
+            "fieldname": "naming_series",
+            "fieldtype": "Select",
+            "label": "Series",
+            "options": "PPM-.####",
+            "reqd": 1
+        },
+        {
+            "fieldname": "schedule_name",
+            "fieldtype": "Data",
+            "label": "Schedule Name",
+            "reqd": 1,
+            "bold": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "service_category",
+            "fieldtype": "Link",
+            "label": "Service Category",
+            "options": "Service Category",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "col_emucr",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Active\nInactive\nOn Hold",
+            "default": "Active",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "fm_contract",
+            "fieldtype": "Link",
+            "label": "FM Contract",
+            "options": "FM Contract"
+        },
+        {
+            "fieldname": "sec_pnfvp",
+            "fieldtype": "Section Break",
+            "label": "Asset"
+        },
+        {
+            "fieldname": "asset_type",
+            "fieldtype": "Select",
+            "label": "Asset Type",
+            "options": "Building Asset\nUnit Asset",
+            "reqd": 1
+        },
+        {
+            "fieldname": "cafm_asset",
+            "fieldtype": "Link",
+            "label": "CAFM Asset",
+            "options": "CAFM Asset"
+        },
+        {
+            "fieldname": "col_ghswo",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "unit_asset",
+            "fieldtype": "Link",
+            "label": "Unit Asset",
+            "options": "Unit Asset"
+        },
+        {
+            "fieldname": "property",
+            "fieldtype": "Link",
+            "label": "Property",
+            "options": "Property",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "sec_bzypd",
+            "fieldtype": "Section Break",
+            "label": "Schedule & Assignment"
+        },
+        {
+            "fieldname": "frequency",
+            "fieldtype": "Select",
+            "label": "Frequency",
+            "options": "Daily\nWeekly\nMonthly\nQuarterly\nSemi-Annual\nAnnual",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "next_run_date",
+            "fieldtype": "Date",
+            "label": "Next Run Date",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "col_asiof",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "last_run_date",
+            "fieldtype": "Date",
+            "label": "Last Run Date",
+            "read_only": 1
+        },
+        {
+            "fieldname": "assigned_to",
+            "fieldtype": "Link",
+            "label": "Technician",
+            "options": "Technician"
+        },
+        {
+            "fieldname": "sec_ygkbe",
+            "fieldtype": "Section Break",
+            "label": "Checklist"
+        },
+        {
+            "fieldname": "checklist_template",
+            "fieldtype": "Link",
+            "label": "Checklist Template",
+            "options": "Checklist Template"
+        },
+        {
+            "fieldname": "sec_vmvns",
+            "fieldtype": "Section Break",
+            "label": "Notes"
+        },
+        {
+            "fieldname": "notes",
+            "fieldtype": "Small Text",
+            "label": "Notes"
+        }
+    ],
+    "index_web_pages_for_search": 0,
+    "is_submittable": 1,
+    "istable": 0,
+    "links": [],
+    "modified": "2026-04-07 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Operations",
+    "name": "PPM Schedule",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "role": "FM Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "submit": 1,
+            "cancel": 1,
+            "amend": 1,
+            "email": 1,
+            "print": 1,
+            "report": 1,
+            "export": 1,
+            "share": 1
+        },
+        {
+            "role": "Supervisor",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "submit": 1,
+            "email": 1,
+            "print": 1,
+            "report": 1,
+            "export": 1,
+            "share": 1
+        },
+        {
+            "role": "Technician",
+            "read": 1,
+            "email": 1,
+            "print": 1,
+            "report": 1,
+            "export": 1,
+            "share": 1
+        },
+        {
+            "role": "System Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1,
+            "submit": 1,
+            "cancel": 1,
+            "email": 1,
+            "print": 1,
+            "report": 1,
+            "export": 1,
+            "share": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1,
+    "autoname": "naming_series:",
+    "naming_rule": "By naming_series field",
+    "naming_series": "PPM-.####",
+    "title_field": "schedule_name"
+}
