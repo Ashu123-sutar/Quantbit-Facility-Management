@@ -1,356 +1,471 @@
 {
-    "actions": [],
-    "creation": "2026-04-07 00:00:00.000000",
+    "name": "Service Request",
+    "module": "Operations",
     "doctype": "DocType",
-    "editable_grid": 1,
-    "engine": "InnoDB",
-    "field_order": [
-        "tab_disbq",
-        "sec_wdcrh",
-        "naming_series",
-        "subject",
-        "col_bqcnc",
-        "service_category",
-        "priority",
-        "sec_lepmi",
-        "status",
-        "assigned_to",
-        "col_bezdy",
-        "requested_by",
-        "request_date",
-        "sec_rtccn",
-        "description",
-        "attachment",
-        "tab_zguzc",
-        "sec_kvssk",
-        "property",
-        "floor",
-        "col_jaxpy",
-        "unit",
-        "sec_ubgyf",
-        "wo_asset_type",
-        "cafm_asset",
-        "col_ldxvt",
-        "unit_asset",
-        "tab_hgzyj",
-        "sec_zjazj",
-        "sla_policy",
-        "sec_irokh",
-        "response_deadline",
-        "resolution_deadline",
-        "col_pvnwp",
-        "response_time_actual",
-        "resolution_time_actual",
-        "sla_status",
-        "sec_qvqdj",
-        "notes"
-    ],
+    "naming_rule": "Expression",
+    "autoname": "format:SR-{########}",
+    "is_submittable": 1,
+    "track_changes": 1,
+    "description": "Customer-reported fault or service request. Parent of reactive Work Orders.",
     "fields": [
         {
-            "fieldname": "tab_disbq",
+            "fieldname": "tab_general",
             "fieldtype": "Tab Break",
-            "label": "Request Details"
+            "label": "General Details"
         },
         {
-            "fieldname": "sec_wdcrh",
-            "fieldtype": "Section Break",
-            "label": "Identity"
-        },
-        {
-            "fieldname": "naming_series",
-            "fieldtype": "Select",
-            "label": "Series",
-            "options": "SR-.####",
-            "reqd": 1
-        },
-        {
-            "fieldname": "subject",
+            "fieldname": "sr_number",
             "fieldtype": "Data",
-            "label": "Subject",
+            "label": "SR Number",
             "reqd": 1,
+            "unique": 1,
+            "in_list_view": 1,
             "bold": 1,
-            "in_list_view": 1
+            "read_only": 1,
+            "description": "System-generated. e.g. SR-0248001"
         },
         {
-            "fieldname": "col_bqcnc",
+            "fieldname": "col_break_1",
             "fieldtype": "Column Break"
         },
         {
-            "fieldname": "service_category",
-            "fieldtype": "Link",
-            "label": "Service Category",
-            "options": "Service Category",
+            "fieldname": "sr_title",
+            "fieldtype": "Data",
+            "label": "SR Title",
             "reqd": 1,
             "in_list_view": 1
         },
         {
-            "fieldname": "priority",
+            "fieldname": "sec_source",
+            "fieldtype": "Section Break",
+            "label": "Request Source"
+        },
+        {
+            "fieldname": "wo_source",
             "fieldtype": "Select",
-            "label": "Priority",
-            "options": "Low\nMedium\nHigh\nCritical",
-            "default": "Medium",
+            "label": "Request Mode",
+            "options": "\nPortal\nPhone\nEmail\nMobile App\nOn-Site\nSystem",
+            "reqd": 1,
             "in_list_view": 1,
+            "in_standard_filter": 1
+        },
+        {
+            "fieldname": "initiator_type",
+            "fieldtype": "Select",
+            "label": "Initiator Type",
+            "options": "\nHelpdesk\nClient\nTechnician\nSystem\nInspection",
+            "in_standard_filter": 1
+        },
+        {
+            "fieldname": "col_break_2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "raised_date",
+            "fieldtype": "Date",
+            "label": "Raised Date",
             "reqd": 1
         },
         {
-            "fieldname": "sec_lepmi",
+            "fieldname": "raised_time",
+            "fieldtype": "Time",
+            "label": "Raised Time"
+        },
+        {
+            "fieldname": "tab_location",
+            "fieldtype": "Tab Break",
+            "label": "Location Details"
+        },
+        {
+            "fieldname": "sec_client_loc",
             "fieldtype": "Section Break",
-            "label": "Status & Assignment"
+            "label": "Client & Contract"
+        },
+        {
+            "fieldname": "client_code",
+            "fieldtype": "Link",
+            "label": "Client",
+            "options": "CAFM Client",
+            "reqd": 1,
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "search_index": 1
+        },
+        {
+            "fieldname": "client_name",
+            "fieldtype": "Data",
+            "label": "Client Name",
+            "fetch_from": "client_code.client_name",
+            "read_only": 1
+        },
+        {
+            "fieldname": "col_break_3",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "contract_code",
+            "fieldtype": "Link",
+            "label": "Contract",
+            "options": "CAFM Contract",
+            "reqd": 1
+        },
+        {
+            "fieldname": "contract_group",
+            "fieldtype": "Data",
+            "label": "Contract Group",
+            "fetch_from": "contract_code.contract_group",
+            "read_only": 1
+        },
+        {
+            "fieldname": "sec_location",
+            "fieldtype": "Section Break",
+            "label": "Property Location"
+        },
+        {
+            "fieldname": "property_code",
+            "fieldtype": "Link",
+            "label": "Property",
+            "options": "CAFM Property",
+            "reqd": 1,
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "search_index": 1
+        },
+        {
+            "fieldname": "property_name",
+            "fieldtype": "Data",
+            "label": "Property Name",
+            "fetch_from": "property_code.property_name",
+            "read_only": 1
+        },
+        {
+            "fieldname": "col_break_4",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "zone_code",
+            "fieldtype": "Link",
+            "label": "Zone",
+            "options": "CAFM Zone"
+        },
+        {
+            "fieldname": "sub_zone_code",
+            "fieldtype": "Link",
+            "label": "Sub Zone",
+            "options": "CAFM Sub Zone"
+        },
+        {
+            "fieldname": "base_unit_code",
+            "fieldtype": "Link",
+            "label": "Base Unit",
+            "options": "CAFM Base Unit"
+        },
+        {
+            "fieldname": "sec_loc_meta",
+            "fieldtype": "Section Break",
+            "label": "Location Details"
+        },
+        {
+            "fieldname": "reporting_level",
+            "fieldtype": "Select",
+            "label": "Reporting Level",
+            "options": "\nProperty\nZone\nSub Zone\nBase Unit\nAsset"
+        },
+        {
+            "fieldname": "location_full_path",
+            "fieldtype": "Small Text",
+            "label": "Location Full Path",
+            "read_only": 1
+        },
+        {
+            "fieldname": "col_break_5",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "business_type",
+            "fieldtype": "Data",
+            "label": "Business Type",
+            "fetch_from": "property_code.business_type",
+            "read_only": 1
+        },
+        {
+            "fieldname": "tab_fault",
+            "fieldtype": "Tab Break",
+            "label": "Fault Classification"
+        },
+        {
+            "fieldname": "sec_asset",
+            "fieldtype": "Section Break",
+            "label": "Asset"
+        },
+        {
+            "fieldname": "asset_code",
+            "fieldtype": "Link",
+            "label": "Asset",
+            "options": "CAFM Asset",
+            "in_standard_filter": 1
+        },
+        {
+            "fieldname": "col_break_6",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "service_group",
+            "fieldtype": "Data",
+            "label": "Service Group",
+            "in_standard_filter": 1
+        },
+        {
+            "fieldname": "sec_fault_detail",
+            "fieldtype": "Section Break",
+            "label": "Fault Details"
+        },
+        {
+            "fieldname": "fault_category",
+            "fieldtype": "Data",
+            "label": "Fault Category"
+        },
+        {
+            "fieldname": "fault_code",
+            "fieldtype": "Link",
+            "label": "Fault Code",
+            "options": "CAFM Fault Code",
+            "in_standard_filter": 1
+        },
+        {
+            "fieldname": "col_break_7",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "priority_default",
+            "fieldtype": "Select",
+            "label": "Priority (Default)",
+            "options": "\nP1 - Critical\nP2 - High\nP3 - Medium\nP4 - Low"
+        },
+        {
+            "fieldname": "priority_actual",
+            "fieldtype": "Select",
+            "label": "Priority (Actual)",
+            "options": "\nP1 - Critical\nP2 - High\nP3 - Medium\nP4 - Low",
+            "reqd": 1,
+            "in_list_view": 1,
+            "in_standard_filter": 1
+        },
+        {
+            "fieldname": "priority_change_reason",
+            "fieldtype": "Small Text",
+            "label": "Priority Change Reason",
+            "depends_on": "eval:doc.priority_actual !== doc.priority_default"
+        },
+        {
+            "fieldname": "approval_criticality",
+            "fieldtype": "Select",
+            "label": "Approval Criticality",
+            "options": "\nNormal\nHigh\nCritical\nEmergency"
+        },
+        {
+            "fieldname": "tab_reporter",
+            "fieldtype": "Tab Break",
+            "label": "Reporter & Notifications"
+        },
+        {
+            "fieldname": "sec_reporter",
+            "fieldtype": "Section Break",
+            "label": "Reported By"
+        },
+        {
+            "fieldname": "reported_by",
+            "fieldtype": "Data",
+            "label": "Reported By"
+        },
+        {
+            "fieldname": "contact_phone",
+            "fieldtype": "Data",
+            "label": "Contact Phone"
+        },
+        {
+            "fieldname": "col_break_8",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "requester_email",
+            "fieldtype": "Data",
+            "label": "Requester Email",
+            "options": "Email"
+        },
+        {
+            "fieldname": "sec_notifications",
+            "fieldtype": "Section Break",
+            "label": "Notifications"
+        },
+        {
+            "fieldname": "notification_email",
+            "fieldtype": "Check",
+            "label": "Notification - Email",
+            "default": "1"
+        },
+        {
+            "fieldname": "notification_sms",
+            "fieldtype": "Check",
+            "label": "Notification - SMS"
+        },
+        {
+            "fieldname": "col_break_9",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "special_instructions",
+            "fieldtype": "Small Text",
+            "label": "Special Instructions"
+        },
+        {
+            "fieldname": "work_description",
+            "fieldtype": "Small Text",
+            "label": "Work Description (Auto-generated)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "tab_sla",
+            "fieldtype": "Tab Break",
+            "label": "SLA & Scheduling"
+        },
+        {
+            "fieldname": "sec_appointment",
+            "fieldtype": "Section Break",
+            "label": "Appointment"
+        },
+        {
+            "fieldname": "appointment_date",
+            "fieldtype": "Date",
+            "label": "Appointment Date"
+        },
+        {
+            "fieldname": "preferred_datetime",
+            "fieldtype": "Datetime",
+            "label": "Preferred Date & Time"
+        },
+        {
+            "fieldname": "sec_response_sla",
+            "fieldtype": "Section Break",
+            "label": "Response SLA"
+        },
+        {
+            "fieldname": "response_sla_target",
+            "fieldtype": "Datetime",
+            "label": "Response SLA Target"
+        },
+        {
+            "fieldname": "response_sla_actual",
+            "fieldtype": "Datetime",
+            "label": "Response SLA Actual"
+        },
+        {
+            "fieldname": "col_break_10",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "response_sla_status",
+            "fieldtype": "Select",
+            "label": "Response SLA Status",
+            "options": "\nPending\nMet\nBreached",
+            "in_list_view": 1,
+            "in_standard_filter": 1
+        },
+        {
+            "fieldname": "sec_resolution_sla",
+            "fieldtype": "Section Break",
+            "label": "Resolution SLA"
+        },
+        {
+            "fieldname": "resolution_sla_target",
+            "fieldtype": "Datetime",
+            "label": "Resolution SLA Target"
+        },
+        {
+            "fieldname": "resolution_sla_actual",
+            "fieldtype": "Datetime",
+            "label": "Resolution SLA Actual"
+        },
+        {
+            "fieldname": "col_break_11",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "resolution_sla_status",
+            "fieldtype": "Select",
+            "label": "Resolution SLA Status",
+            "options": "\nPending\nMet\nBreached",
+            "in_standard_filter": 1
+        },
+        {
+            "fieldname": "tab_closure",
+            "fieldtype": "Tab Break",
+            "label": "Closure & Feedback"
+        },
+        {
+            "fieldname": "sec_wo_link",
+            "fieldtype": "Section Break",
+            "label": "Work Order"
+        },
+        {
+            "fieldname": "converted_to_wo",
+            "fieldtype": "Check",
+            "label": "Converted to WO",
+            "read_only": 1
+        },
+        {
+            "fieldname": "wo_number",
+            "fieldtype": "Link",
+            "label": "Work Order",
+            "options": "CAFM Work Order",
+            "read_only": 1
+        },
+        {
+            "fieldname": "col_break_12",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "customer_rating",
+            "fieldtype": "Select",
+            "label": "Customer Rating",
+            "options": "\n1 - Very Unsatisfied\n2 - Unsatisfied\n3 - Neutral\n4 - Satisfied\n5 - Very Satisfied",
+            "in_standard_filter": 1
+        },
+        {
+            "fieldname": "remarks",
+            "fieldtype": "Small Text",
+            "label": "Remarks"
+        },
+        {
+            "fieldname": "sec_sr_status",
+            "fieldtype": "Section Break",
+            "label": "Status"
         },
         {
             "fieldname": "status",
             "fieldtype": "Select",
             "label": "Status",
-            "options": "Open\nAssigned\nIn Progress\nOn Hold\nEscalated\nResolved\nClosed\nCancelled",
+            "options": "\nOpen\nIn Progress\nPending Approval\nConverted\nClosed\nCancelled",
             "default": "Open",
+            "reqd": 1,
             "in_list_view": 1,
-            "bold": 1
+            "in_standard_filter": 1
         },
         {
-            "fieldname": "assigned_to",
-            "fieldtype": "Link",
-            "label": "Assigned To (Technician)",
-            "options": "Technician",
-            "in_list_view": 1
-        },
-        {
-            "fieldname": "col_bezdy",
+            "fieldname": "col_break_13",
             "fieldtype": "Column Break"
         },
         {
-            "fieldname": "requested_by",
+            "fieldname": "amended_from",
             "fieldtype": "Link",
-            "label": "Requested By",
-            "options": "User"
-        },
-        {
-            "fieldname": "request_date",
-            "fieldtype": "Date",
-            "label": "Request Date",
-            "default": "Today"
-        },
-        {
-            "fieldname": "sec_rtccn",
-            "fieldtype": "Section Break",
-            "label": "Description"
-        },
-        {
-            "fieldname": "description",
-            "fieldtype": "Text",
-            "label": "Description",
-            "reqd": 1
-        },
-        {
-            "fieldname": "attachment",
-            "fieldtype": "Attach Image",
-            "label": "Attachment / Photo"
-        },
-        {
-            "fieldname": "tab_zguzc",
-            "fieldtype": "Tab Break",
-            "label": "Location & Routing"
-        },
-        {
-            "fieldname": "sec_kvssk",
-            "fieldtype": "Section Break",
-            "label": "Property Location"
-        },
-        {
-            "fieldname": "property",
-            "fieldtype": "Link",
-            "label": "Property",
-            "options": "Property",
-            "in_list_view": 1
-        },
-        {
-            "fieldname": "floor",
-            "fieldtype": "Link",
-            "label": "Floor",
-            "options": "Property Floor"
-        },
-        {
-            "fieldname": "col_jaxpy",
-            "fieldtype": "Column Break"
-        },
-        {
-            "fieldname": "unit",
-            "fieldtype": "Link",
-            "label": "Property Unit",
-            "options": "Property Unit",
-            "description": "Auto-populates Property and Floor"
-        },
-        {
-            "fieldname": "sec_ubgyf",
-            "fieldtype": "Section Break",
-            "label": "Asset Details"
-        },
-        {
-            "fieldname": "wo_asset_type",
-            "fieldtype": "Select",
-            "label": "Asset Type",
-            "options": "\nBuilding Asset\nUnit Asset",
-            "description": "Determines which asset link populates on the created WO"
-        },
-        {
-            "fieldname": "cafm_asset",
-            "fieldtype": "Link",
-            "label": "CAFM Asset (Building)",
-            "options": "CAFM Asset"
-        },
-        {
-            "fieldname": "col_ldxvt",
-            "fieldtype": "Column Break"
-        },
-        {
-            "fieldname": "unit_asset",
-            "fieldtype": "Link",
-            "label": "Unit Asset (In-Unit)",
-            "options": "Unit Asset",
-            "description": "Alternative to CAFM Asset for unit-level issues"
-        },
-        {
-            "fieldname": "tab_hgzyj",
-            "fieldtype": "Tab Break",
-            "label": "SLA & Deadlines"
-        },
-        {
-            "fieldname": "sec_zjazj",
-            "fieldtype": "Section Break",
-            "label": "SLA Policy"
-        },
-        {
-            "fieldname": "sla_policy",
-            "fieldtype": "Link",
-            "label": "SLA Policy",
-            "options": "SLA Policy",
-            "description": "Auto-assigned from Service Category"
-        },
-        {
-            "fieldname": "sec_irokh",
-            "fieldtype": "Section Break",
-            "label": "SLA Metrics"
-        },
-        {
-            "fieldname": "response_deadline",
-            "fieldtype": "Datetime",
-            "label": "Response Deadline",
+            "label": "Amended From",
+            "options": "CAFM Service Request",
+            "no_copy": 1,
+            "print_hide": 1,
             "read_only": 1
-        },
-        {
-            "fieldname": "resolution_deadline",
-            "fieldtype": "Datetime",
-            "label": "Resolution Deadline",
-            "read_only": 1
-        },
-        {
-            "fieldname": "col_pvnwp",
-            "fieldtype": "Column Break"
-        },
-        {
-            "fieldname": "response_time_actual",
-            "fieldtype": "Float",
-            "label": "Actual Response (hrs)",
-            "read_only": 1
-        },
-        {
-            "fieldname": "resolution_time_actual",
-            "fieldtype": "Float",
-            "label": "Actual Resolution (hrs)",
-            "read_only": 1
-        },
-        {
-            "fieldname": "sla_status",
-            "fieldtype": "Select",
-            "label": "SLA Status",
-            "options": "Pending\nMet\nBreach",
-            "read_only": 1,
-            "in_list_view": 1
-        },
-        {
-            "fieldname": "sec_qvqdj",
-            "fieldtype": "Section Break",
-            "label": "Notes"
-        },
-        {
-            "fieldname": "notes",
-            "fieldtype": "Small Text",
-            "label": "Internal Notes"
         }
     ],
-    "index_web_pages_for_search": 0,
-    "is_submittable": 1,
-    "istable": 0,
-    "links": [],
-    "modified": "2026-04-07 00:00:00.000000",
-    "modified_by": "Administrator",
-    "module": "Operations",
-    "name": "Service Request",
-    "owner": "Administrator",
     "permissions": [
-        {
-            "role": "FM Manager",
-            "read": 1,
-            "write": 1,
-            "create": 1,
-            "delete": 1,
-            "submit": 1,
-            "cancel": 1,
-            "amend": 1,
-            "email": 1,
-            "print": 1,
-            "report": 1,
-            "export": 1,
-            "share": 1
-        },
-        {
-            "role": "Supervisor",
-            "read": 1,
-            "write": 1,
-            "create": 1,
-            "submit": 1,
-            "cancel": 1,
-            "email": 1,
-            "print": 1,
-            "report": 1,
-            "export": 1,
-            "share": 1
-        },
-        {
-            "role": "Technician",
-            "read": 1,
-            "email": 1,
-            "print": 1,
-            "report": 1,
-            "export": 1,
-            "share": 1
-        },
-        {
-            "role": "Tenant",
-            "read": 1,
-            "email": 1,
-            "print": 1,
-            "report": 1,
-            "export": 1,
-            "share": 1
-        },
-        {
-            "role": "Accountant",
-            "read": 1,
-            "email": 1,
-            "print": 1,
-            "report": 1,
-            "export": 1,
-            "share": 1
-        },
-        {
-            "role": "Property Manager",
-            "read": 1,
-            "email": 1,
-            "print": 1,
-            "report": 1,
-            "export": 1,
-            "share": 1
-        },
         {
             "role": "System Manager",
             "read": 1,
@@ -359,19 +474,30 @@
             "delete": 1,
             "submit": 1,
             "cancel": 1,
-            "email": 1,
-            "print": 1,
-            "report": 1,
-            "export": 1,
-            "share": 1
+            "amend": 1
+        },
+        {
+            "role": "CAFM Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 0,
+            "submit": 1,
+            "cancel": 1,
+            "amend": 1
+        },
+        {
+            "role": "CAFM User",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 0,
+            "submit": 0,
+            "cancel": 0
         }
     ],
-    "sort_field": "modified",
-    "sort_order": "DESC",
-    "states": [],
-    "track_changes": 1,
-    "autoname": "naming_series:",
-    "naming_rule": "By naming_series field",
-    "naming_series": "SR-.####",
-    "title_field": "subject"
+    "search_fields": "sr_title,client_code,property_code,fault_code,status",
+    "title_field": "sr_title",
+    "sort_field": "raised_date",
+    "sort_order": "DESC"
 }
