@@ -1,0 +1,80 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-09 10:05:22.496741",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "area_code",
+  "area_name",
+  "area_group_code",
+  "area_group_name",
+  "city_code",
+  "gps_lat",
+  "gps_long",
+  "is_active"
+ ],
+ "fields": [
+  {
+   "fieldname": "area_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Area code"
+  },
+  {
+   "fieldname": "area_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Area Name"
+  },
+  {
+   "fieldname": "area_group_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Area Group Code"
+  },
+  {
+   "fieldname": "area_group_name",
+   "fieldtype": "Data",
+   "label": "Area Group Name"
+  },
+  {
+   "fieldname": "city_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "City Code"
+  },
+  {
+   "fieldname": "gps_lat",
+   "fieldtype": "Data",
+   "label": "GPS Lat"
+  },
+  {
+   "fieldname": "gps_long",
+   "fieldtype": "Data",
+   "label": "GPS Long"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-04-09 10:13:46.298051",
+ "modified_by": "Administrator",
+ "module": "Asset",
+ "name": "Area",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
