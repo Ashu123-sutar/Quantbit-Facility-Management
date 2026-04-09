@@ -1,0 +1,119 @@
+{
+    "name": "Sub Zone",
+    "module": "Asset",
+    "doctype": "DocType",
+    "naming_rule": "Expression",
+    "autoname": "format:SZ{####}",
+    "is_submittable": 0,
+    "track_changes": 1,
+    "description": "Functional sub-division within a Zone (e.g. Reception Lobby, Teller Counter Area).",
+    "fields": [
+        {
+            "fieldname": "tab_general",
+            "fieldtype": "Tab Break",
+            "label": "General Details"
+        },
+        {
+            "fieldname": "sub_zone_code",
+            "fieldtype": "Data",
+            "label": "Sub Zone Code",
+            "reqd": 1,
+            "unique": 1,
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "bold": 1
+        },
+        {
+            "fieldname": "col_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "sub_zone_name",
+            "fieldtype": "Data",
+            "label": "Sub Zone Name",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "sec_hierarchy",
+            "fieldtype": "Section Break",
+            "label": "Zone Hierarchy"
+        },
+        {
+            "fieldname": "zone_code",
+            "fieldtype": "Link",
+            "label": "Zone",
+            "options": "CAFM Zone",
+            "reqd": 1,
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "search_index": 1
+        },
+        {
+            "fieldname": "zone_name",
+            "fieldtype": "Data",
+            "label": "Zone Name",
+            "fetch_from": "zone_code.zone_name",
+            "read_only": 1
+        },
+        {
+            "fieldname": "col_break_2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "property_code",
+            "fieldtype": "Link",
+            "label": "Property",
+            "options": "CAFM Property",
+            "fetch_from": "zone_code.property_code",
+            "read_only": 1,
+            "in_standard_filter": 1
+        },
+        {
+            "fieldname": "business_type",
+            "fieldtype": "Data",
+            "label": "Business Type",
+            "fetch_from": "zone_code.business_type",
+            "read_only": 1
+        },
+        {
+            "fieldname": "sec_status",
+            "fieldtype": "Section Break",
+            "label": "Status"
+        },
+        {
+            "fieldname": "is_active",
+            "fieldtype": "Check",
+            "label": "Is Active",
+            "default": "1",
+            "in_list_view": 1
+        }
+    ],
+    "permissions": [
+        {
+            "role": "System Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 1
+        },
+        {
+            "role": "CAFM Manager",
+            "read": 1,
+            "write": 1,
+            "create": 1,
+            "delete": 0
+        },
+        {
+            "role": "CAFM User",
+            "read": 1,
+            "write": 0,
+            "create": 0,
+            "delete": 0
+        }
+    ],
+    "search_fields": "sub_zone_name,zone_code,property_code",
+    "title_field": "sub_zone_name",
+    "sort_field": "zone_code",
+    "sort_order": "ASC"
+}
